@@ -1,6 +1,5 @@
 // server.js
 var history = require('connect-history-api-fallback');
-var connect = require('connect');
 
 var express = require('express');
 var path = require('path');
