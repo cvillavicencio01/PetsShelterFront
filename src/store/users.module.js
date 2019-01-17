@@ -39,9 +39,7 @@ const mutations = {
     deleteRequest(state, id) {
         // add 'deleting:true' property to user being deleted
         state.all.items = state.all.items.map(user =>
-            user.id === id
-                ? { ...user, deleting: true }
-                : user
+            user.id === id ? { ...user, deleting: true } : user
         )
     },
     deleteSuccess(state, id) {

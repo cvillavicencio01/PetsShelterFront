@@ -79,7 +79,7 @@
             if (this.isAuthenticated) {
               return [
                 { title: 'Home', path: '/', icon: 'home' },
-                { title: 'Account', path: '/account', icon: 'home' }
+                { title: 'Account', path: '/account', icon: 'account_box' }
               ]
             } else {
               return [
