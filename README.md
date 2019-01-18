@@ -1,4 +1,4 @@
-# petsshelter
+# Pets Shelter Front-End
 
 ## Project setup
 ```
