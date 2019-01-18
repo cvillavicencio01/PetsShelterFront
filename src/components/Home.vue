@@ -7,7 +7,7 @@
         <p>You're logged in!!</p>
       </v-flex>
       <v-flex xs12 class="text-xs-center" mt-3>
-        <h3>Users from secure api end point:</h3>
+        <h3>Users from api:</h3>
         <p>This is a user's home page</p>
         <p>
             <v-btn color="primary" @click="logout">Logout</v-btn>

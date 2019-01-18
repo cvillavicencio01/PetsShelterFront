@@ -1,6 +1,4 @@
-# Projet de Programmation Web
-
-## Pets Shelter Front End 
+# petsshelter
 
 ## Project setup
 ```

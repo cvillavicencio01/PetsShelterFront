@@ -1,10 +1,11 @@
 import { authHeader } from '../helpers';
 
+const SERVER = 'https://dry-shore-29528.herokuapp.com';
+
 export const userService = {
     login,
     logout,
     register,
-    //getAll,
     getById,
     update,
     delete: _delete
@@ -17,7 +18,7 @@ function login(username, password) {
         body: JSON.stringify({ username, password })
     };
 
-    return fetch(`https://dry-shore-29528.herokuapp.com/authenticate`, requestOptions)
+    return fetch(SERVER+`/authenticate`, requestOptions)
         .then(handleResponse)
         .then(user => {
             if (user.token) {
@@ -39,17 +40,8 @@ function register(user) {
         body: JSON.stringify(user)
     };
 
-    return fetch(`https://dry-shore-29528.herokuapp.com/register`, requestOptions).then(handleResponse);
+    return fetch(SERVER+`/register`, requestOptions).then(handleResponse);
 }
-
-/*function getAll() {
-    const requestOptions = {
-        method: 'GET',
-        headers: authHeader()
-    };
-
-    return fetch(`https://dry-shore-29528.herokuapp.com/users`, requestOptions).then(handleResponse);
-}*/
 
 
 function getById(id) {
@@ -58,7 +50,7 @@ function getById(id) {
         headers: authHeader()
     };
 
-    return fetch(`https://dry-shore-29528.herokuapp.com/users/${id}`, requestOptions).then(handleResponse);
+    return fetch(SERVER+`/users/${id}`, requestOptions).then(handleResponse);
 }
 
 function update(user) {
@@ -68,17 +60,16 @@ function update(user) {
         body: JSON.stringify(user)
     };
 
-    return fetch(`https://dry-shore-29528.herokuapp.com/users/${user.id}`, requestOptions).then(handleResponse);
+    return fetch(SERVER+`/users/${user.id}`, requestOptions).then(handleResponse);
 }
 
-// prefixed function name with underscore because delete is a reserved word in javascript
 function _delete(id) {
     const requestOptions = {
         method: 'DELETE',
         headers: authHeader()
     };
 
-    return fetch(`https://dry-shore-29528.herokuapp.com/users/${id}`, requestOptions).then(handleResponse);
+    return fetch(SERVER+`/users/${id}`, requestOptions).then(handleResponse);
 }
 
 function handleResponse(response) {

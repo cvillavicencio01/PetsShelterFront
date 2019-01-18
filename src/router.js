@@ -3,8 +3,8 @@ import Router from 'vue-router'
 
 const routerOptions = [
   { path: '/', component: 'Landing' },
-  { path: '/signin', component: 'Signin' }, // like login
-  { path: '/signup', component: 'Signup' }, // register
+  { path: '/signin', component: 'Signin' },
+  { path: '/signup', component: 'Signup' }, 
   { path: '/account', component: 'Home' },
   { path: '/new-report', component: 'CreatePet' },
   { path: '/details/:Pid', component: 'PetDetails', name: 'details' },

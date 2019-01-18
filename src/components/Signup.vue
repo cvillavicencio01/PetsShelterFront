@@ -8,7 +8,6 @@
 
         <form @submit.prevent="handleSubmit">
           <v-layout column>
-
             <v-flex>
               <v-text-field
                 name="name"
@@ -106,11 +105,8 @@
           ...mapActions('account', ['register']),
           handleSubmit(e) {
               this.submitted = true;
-              //this.$validator.validate().then(valid => {
-                  //if (valid) {
+
                       this.register(this.user);
-                  //}
-              //});
           }
       }
   };

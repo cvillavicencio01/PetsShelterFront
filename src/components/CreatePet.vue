@@ -3,7 +3,7 @@
     <v-layout row wrap>
 
 
-      <form  @submit.prevent="handleSubmit" method="post" enctype="multipart/form-data">
+      <form  @submit.prevent="handleSubmit">
 
         <v-flex>
           <v-text-field
@@ -56,6 +56,10 @@
 <script>
 
   import { mapState, mapActions } from 'vuex'
+  import { authHeader } from '../helpers';
+import {router} from '../router'
+
+const SERVER = 'https://dry-shore-29528.herokuapp.com';
 
   export default {
       data () {
@@ -97,7 +101,23 @@
     			}
     		},
         handleSubmit(e) {
-            //this.register(this.user);
+
+          let formData = new FormData();
+          formData.append("image",this.imageFile);
+          formData.append("name", this.pet.name);
+          formData.append("specie", this.pet.specie);
+          formData.append("status", this.pet.status);
+
+          const requestOptions = {
+              method: 'POST',
+              body: formData,
+              headers: authHeader()
+          };
+
+          fetch(SERVER+`/pets`, requestOptions).then(function (response,error) {
+                //router.push(`/details/${response.id}`);
+                this.$router.push({name:'details',params:{Pid:response.id}});
+          });
         }
       }
   };

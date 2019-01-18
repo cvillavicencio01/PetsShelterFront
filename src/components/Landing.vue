@@ -17,9 +17,9 @@
           <v-card>
             <v-container fluid grid-list-sm>
               <v-layout row wrap>
-                <v-flex v-for="(data,index) in products" :key="index" xs12 sm6 md3 order-md1 order-sm1 class="text-xs-center">
+                <v-flex v-for="(data,index) in animals" :key="index" xs12 sm5 md2 order-md1 order-sm1 class="text-xs-center">
                   <img :src="data.image" class="img-fluid">
-                  <h3 @click="goTodetail(data.productId)" >{{data.productTitle}}</h3>
+                  <h3 @click="goTodetail(data.imageId)" >{{data.animalTitle}}</h3>
                 </v-flex>
               </v-layout>
             </v-container>
@@ -31,12 +31,7 @@
 </template>
 
 
-<!--
-<script>
 
-export default {
-}
-</script>-->
 
 
 <script>
@@ -45,101 +40,101 @@ export default {
   data () {
     return {
       title: 'Home',
-      products:[
+      animals:[
       {
-        productTitle:"ABCN",
-        image       : require('../assets/images/product1.png'),
-        productId:1
+        animalTitle:"ABCN",
+        image       : require('../assets/images/picture1.jpg'),
+        imageId:1
       },
       {
-        productTitle:"KARMA",
-        image       : require('../assets/images/product2.png'),
-        productId:2
+        animalTitle:"KARMA",
+        image       : require('../assets/images/picture2.jpg'),
+        imageId:2
       },
       {
-        productTitle:"Tino",
-        image       : require('../assets/images/product3.png'),
-        productId:3
+        animalTitle:"Tino",
+        image       : require('../assets/images/picture3.jpg'),
+        imageId:3
       },
       {
-        productTitle:"EFG",
-        image       : require('../assets/images/product4.png'),
-        productId:4
+        animalTitle:"EFG",
+        image       : require('../assets/images/picture4.jpg'),
+        imageId:4
       },
       {
-        productTitle:"MLI",
-        image       : require('../assets/images/product5.png'),
-        productId:5
+        animalTitle:"MLI",
+        image       : require('../assets/images/picture5.jpg'),
+        imageId:5
       },
       {
-        productTitle:"Banans",
-        image       : require('../assets/images/product6.png'),
-        productId:6
+        animalTitle:"Banans",
+        image       : require('../assets/images/picture6.jpg'),
+        imageId:6
       },
       {
-        productTitle:"ABCN",
-        image       : require('../assets/images/product1.png'),
-        productId:7
+        animalTitle:"ABCN",
+        image       : require('../assets/images/picture7.jpg'),
+        imageId:7
       },
       {
-        productTitle:"KARMA",
-        image       : require('../assets/images/product2.png'),
-        productId:8
+        animalTitle:"KARMA",
+        image       : require('../assets/images/picture8.jpg'),
+        imageId:8
       },
       {
-        productTitle:"Tino",
-        image       : require('../assets/images/product3.png'),
-        productId:9
+        animalTitle:"Tino",
+        image       : require('../assets/images/picture9.jpg'),
+        imageId:9
       },
       {
-        productTitle:"EFG",
-        image       : require('../assets/images/product4.png'),
-        productId:10
+        animalTitle:"EFG",
+        image       : require('../assets/images/picture10.jpg'),
+        imageId:10
       },
       {
-        productTitle:"MLI",
-        image       : require('../assets/images/product5.png'),
-        productId:11
+        animalTitle:"MLI",
+        image       : require('../assets/images/picture11.jpg'),
+        imageId:11
       },
       {
-        productTitle:"Banans",
-        image       : require('../assets/images/product6.png'),
-        productId:12
+        animalTitle:"Banans",
+        image       : require('../assets/images/picture12.jpg'),
+        imageId:12
       },
       {
-        productTitle:"KARMA",
-        image       : require('../assets/images/product2.png'),
-        productId:13
+        animalTitle:"KARMA",
+        image       : require('../assets/images/picture13.jpg'),
+        imageId:13
       },
       {
-        productTitle:"Tino",
-        image       : require('../assets/images/product3.png'),
-        productId:14
+        animalTitle:"Tino",
+        image       : require('../assets/images/picture14.jpg'),
+        imageId:14
       },
       {
-        productTitle:"EFG",
-        image       : require('../assets/images/product4.png'),
-        productId:15
+        animalTitle:"EFG",
+        image       : require('../assets/images/picture15.jpg'),
+        imageId:15
       },
       {
-        productTitle:"MLI",
-        image       : require('../assets/images/product5.png'),
-        productId:16
+        animalTitle:"MLI",
+        image       : require('../assets/images/picture16.jpg'),
+        imageId:16
       },
       {
-        productTitle:"Banans",
-        image       : require('../assets/images/product6.png'),
-        productId:17
+        animalTitle:"Banans",
+        image       : require('../assets/images/picture17.jpg'),
+        imageId:17
       },
       {
-        productTitle:"ABCN",
-        image       : require('../assets/images/product1.png'),
-        productId:18
+        animalTitle:"ABCN",
+        image       : require('../assets/images/picture18.jpg'),
+        imageId:18
       },
       {
-        productTitle:"KARMA",
-        image       : require('../assets/images/product2.png'),
-        productId:19
+        animalTitle:"KARMA",
+        image       : require('../assets/images/picture19.jpg'),
+        imageId:19
       }
       ]
     }
@@ -154,6 +149,13 @@ export default {
 </script>
 
 <style scoped>
+
+/* Set the size of the div element that contains the map */
+#map {
+ height: 400px;  /* The height is 400 pixels */
+ width: 100%;  /* The width is the width of the web page */
+}
+
 .row img{
   max-height: 9em;
   width: 100%;
