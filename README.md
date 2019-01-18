@@ -25,5 +25,10 @@ npm run test
 npm run lint
 ```
 
+### Heroku Demo
+```
+https://mighty-chamber-97953.herokuapp.com
+```
+
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
